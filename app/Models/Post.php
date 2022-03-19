@@ -18,6 +18,6 @@ class Post extends Model
         "title",
         "content",
         "publishedAt",
-        "updatedAt"
+        "updated_at"
     ];
 }

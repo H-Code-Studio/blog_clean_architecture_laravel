@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Seat\SharedKernel\Model;
+namespace Domain\SharedKernel\Model;
 
 use DateInterval;
 use DateTimeImmutable;

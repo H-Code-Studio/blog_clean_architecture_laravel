@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Framework\Laravel9\Repository;
+namespace Domain\Blog\Repository;
 
 use Domain\Blog\Entity\Post;
 

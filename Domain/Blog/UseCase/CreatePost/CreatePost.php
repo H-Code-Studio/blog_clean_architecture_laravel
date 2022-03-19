@@ -8,8 +8,9 @@ use Domain\Blog\Entity\Post;
 use Domain\Blog\UseCase\CreatePost\CreatePostRequest;
 use Domain\Blog\UseCase\CreatePost\CreatePostResponse;
 use Domain\Blog\UseCase\CreatePost\CreatePostPresenterInterface;
-use Domain\Framework\Laravel9\Repository\PostRepositoryInterface;
-use Seat\SharedKernel\Service\IdGenerator;
+use Domain\Blog\Repository\PostRepositoryInterface;
+
+use Domain\SharedKernel\Service\IdGenerator;
 
 class CreatePost {
 
@@ -24,7 +25,7 @@ class CreatePost {
     public function execute(CreatePostRequest $postRequest, CreatePostPresenterInterface $createPostPresenter) :void
     {
         $response = new CreatePostResponse();
-        $this->validate( $postRequest, $response);
+        $this->validate($postRequest, $response);
 
         $createPostPresenter->present($response);
     }
@@ -57,14 +58,14 @@ class CreatePost {
 
     public function save(CreatePostRequest $postRequest, CreatePostResponse $createPostResponse)
     {
-        $Post = new Post(
+        $post = new Post(
             $this->idGenerator->next(),
             $postRequest->title,
             $postRequest->content,
             $postRequest->publishedAt,
             $postRequest->updatedAt,
         );
-        $this->postRepository->createPost($Post);
-        $createPostResponse->setPost($Post);
+        $this->postRepository->createPost($post);
+        $createPostResponse->setPost($post);
     }
 }

@@ -3,7 +3,7 @@
 namespace Domain\Blog\UseCase\CreatePost;
 
 use Domain\Blog\Entity\Post;
-use Seat\SharedKernel\Error\Notification;
+use Domain\SharedKernel\Error\Notification;
 
 class CreatePostResponse
 {
@@ -36,4 +36,5 @@ class CreatePostResponse
     {
         return $this->post;
     }
+
 }

@@ -4,7 +4,7 @@ namespace Domain\Blog\UseCase\UpdatePost;
 
 use Domain\Blog\Entity\Post;
 use Domain\Blog\UseCase\UpdatePost\UpdatePostRequest;
-use Seat\SharedKernel\Error\Notification;
+use Domain\SharedKernel\Error\Notification;
 
 class UpdatePostResponse
 {
