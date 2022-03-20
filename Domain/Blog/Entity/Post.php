@@ -10,8 +10,8 @@ class Post
     private string $id;
     private string $title;
     private string $content;
-    private DateTimeInterface $publishedAt;
-    private DateTimeInterface $updatedAt;
+    private DateTimeInterface|null $publishedAt;
+    private DateTimeInterface|null $updatedAt;
 
     public function __construct(string $id,string $title, string $content, ?DateTimeInterface $publishedAt, ?DateTimeInterface $updatedAt)
     {

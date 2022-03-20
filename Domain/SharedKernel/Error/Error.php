@@ -2,7 +2,7 @@
 
 namespace Domain\SharedKernel\Error;
 
-class Error
+class Error implements \JsonSerializable
 {
     private $fieldName;
     private $message;
@@ -13,7 +13,7 @@ class Error
         $this->message = $message;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->fieldName.':'.$this->message;
     }
@@ -26,5 +26,10 @@ class Error
     public function message(): string
     {
         return $this->message;
+    }
+    
+    public function jsonSerialize()
+    {
+        return $this->__toString();
     }
 }

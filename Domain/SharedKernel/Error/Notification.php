@@ -2,6 +2,7 @@
 
 namespace Domain\SharedKernel\Error;
 
+
 class Notification
 {
     private $errors = [];
@@ -25,4 +26,5 @@ class Notification
     {
         return count($this->errors) > 0;
     }
+
 }
